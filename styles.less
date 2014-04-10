@@ -1,0 +1,110 @@
+@bodyBackground:#dfdfdf;
+@textColor:#868686;
+@navbg:#cdcdcd;
+@homebg:#f26c4e;
+@homebghover:darken(@homebg,2);
+@aboutbg:#cf6baa;
+@adminbg:#f2c24d;
+@loginbg:#a3d178;
+@archievesbg:#78ccd0;
+@sourcebg:@homebg;
+.btn-login{
+	background: darken(@archievesbg,15);
+	border-radius: 0px;
+	padding: 10px 50px 10px 50px;
+	color: white;
+	&:hover{
+		background:darken(darken(@archievesbg,15),2);
+		color:white;
+	}
+}
+@font-face {
+ font-family:acme;
+ src: url(fonts/Acme/Acme-Regular.ttf);
+}
+@font-face {
+ font-family:sintony;
+ src: url(fonts/Sintony/Sintony-Regular.ttf);
+} 
+nav{
+//	background: @navbg;
+	list-style: none;
+	text-align: center;
+	margin-top: 15px;
+	margin-bottom: 15px;
+}
+nav ul{
+	margin:0 auto;
+}
+nav li{
+	position: relative;
+	display: table-cell;
+}
+nav ul li{
+	background: @homebg;
+	margin:0 0 0 0;
+	&:hover{
+		background:darken(@homebg,3);
+	}
+	a{
+		padding:20px 62px 20px 62px;
+		font-size: 18px;
+		display: block;
+		position: relative;
+		margin: 0 0 0 0;
+		color:#FFFFFF;
+		&:hover{
+			color:#FFFFFF;
+			text-decoration:none;
+		}
+	}
+}
+.about{
+	background: @aboutbg;
+	&:hover{
+		background:darken(@aboutbg,3);
+	}
+}
+.admin{
+	background: @adminbg;
+	&:hover{
+		background:darken(@adminbg,3);
+	}
+}
+.login{
+	background: @loginbg;
+	&:hover{
+		background:darken(@loginbg,3);
+	}
+}
+.archieves{
+	background: @archievesbg;
+	&:hover{
+		background:darken(@archievesbg,3);
+	}
+}
+.source{
+	background: @sourcebg;
+	&:hover{
+		background:darken(@sourcebg,3);
+	}
+}
+body{
+	background: @bodyBackground;
+	color: @textColor;
+	font-family: sintony;
+}
+div.head{
+	margin-top: 15px;
+	font-size: 22px;
+	text-align: center;
+	font-family: sintony;
+}
+div.head.subtitle{
+	margin-top: 0px;
+	font-size: 18px;
+	font-family: acme;
+}
+footer a:hover{
+	text-decoration: none;
+}

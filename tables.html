@@ -1,0 +1,94 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Login</title>
+	<link rel="stylesheet" href="//cdn/bootstrap.css">
+	<!-- <link rel="stylesheet" href="raty/demo/stylesheets/labs.css"> -->
+	<script type="text/javascript" language="javascript" src="//cdn/jquery.js"></script>
+	<script type="text/javascript" language="javascript" src="//cdn/bootstrap.js"></script>
+	<script type="text/javascript" language="javascript" src="raty/lib/jquery.raty.js"></script>
+	<script>
+	$(document).ready(function() {
+		$.each($('.score'), function(index, val) {
+			$this=$(this)
+			name=$this.data('name');
+			$this.raty({scoreName:name,hints:['poor','satisfactory','good','very good','excellent']})
+		});
+		$('.score img').tooltip();
+	});</script>
+</head>
+<body>
+	<form action="test.php" method="get">
+	<table class="table">
+		<tr>
+		<th>Parameters</th>
+		<th>10CS41</th>
+		<th>10CS42</th>
+		<th>10CS43</th>
+		<th>10CS44</th>
+		<th>10CS45</th>
+		<th>10CS46</th>
+		<th>10CSL47</th>
+		<th>10CSL48</th>
+		</tr>
+		<tr>
+		<th>Coverage of syllabus</th>
+		<td><div class="score" data-name="cos[swr]"></div></td>
+		<td><div class="score" data-name="cos[pkj]"></div></td>
+		<td><div class="score" data-name="cos[unix]"></div></td>
+		<td><div class="score" data-name="cos[ada]"></div></td>
+		<td><div class="score" data-name="cos[mat]"></div></td>
+		<td><div class="score" data-name="cos[gt]"></div></td>
+		<td><div class="score" data-name="cos[adal]"></div></td>
+		<td><div class="score" data-name="cos[mpl]"></div></td>
+		</tr>
+		<tr>
+		<th>No of tutorials conducted</th>
+		<td></td>
+		<td></td>
+		<td></td>
+		<td></td>
+		<td></td>
+		<td></td>
+		<td></td>
+		<td></td>
+		</tr>
+		<tr>
+		<th>Old Question papper solved</th>
+		<td></td>
+		<td></td>
+		<td></td>
+		<td></td>
+		<td></td>
+		<td></td>
+		<td></td>
+		<td></td>
+		</tr>
+		<tr>
+		<th>Students seminars presentation encouraged</th>
+		<td></td>
+		<td></td>
+		<td></td>
+		<td></td>
+		<td></td>
+		<td></td>
+		<td></td>
+		<td></td>
+		</tr>
+		<tr>
+		<th>Counselling acedemically weak students</th>
+		<td></td>
+		<td></td>
+		<td></td>
+		<td></td>
+		<td></td>
+		<td></td>
+		<td></td>
+		<td></td>
+		</tr>
+	</table>
+	<input type="submit" />
+	</form>
+</body>
+</html>

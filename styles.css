@@ -1,0 +1,99 @@
+.btn-login {
+  background: #41b5bb;
+  border-radius: 0px;
+  padding: 10px 50px 10px 50px;
+  color: white;
+}
+.btn-login:hover {
+  background: #3eaeb3;
+  color: white;
+}
+@font-face {
+  font-family: acme;
+  src: url(fonts/Acme/Acme-Regular.ttf);
+}
+@font-face {
+  font-family: sintony;
+  src: url(fonts/Sintony/Sintony-Regular.ttf);
+}
+nav {
+  list-style: none;
+  text-align: center;
+  margin-top: 15px;
+  margin-bottom: 15px;
+}
+nav ul {
+  margin: 0 auto;
+}
+nav li {
+  position: relative;
+  display: table-cell;
+}
+nav ul li {
+  background: #f26c4e;
+  margin: 0 0 0 0;
+}
+nav ul li:hover {
+  background: #f16040;
+}
+nav ul li a {
+  padding: 20px 62px 20px 62px;
+  font-size: 18px;
+  display: block;
+  position: relative;
+  margin: 0 0 0 0;
+  color: #FFFFFF;
+}
+nav ul li a:hover {
+  color: #FFFFFF;
+  text-decoration: none;
+}
+.about {
+  background: #cf6baa;
+}
+.about:hover {
+  background: #cb5fa3;
+}
+.admin {
+  background: #f2c24d;
+}
+.admin:hover {
+  background: #f1bd3f;
+}
+.login {
+  background: #a3d178;
+}
+.login:hover {
+  background: #9bcd6d;
+}
+.archieves {
+  background: #78ccd0;
+}
+.archieves:hover {
+  background: #6dc8cc;
+}
+.source {
+  background: #f26c4e;
+}
+.source:hover {
+  background: #f16040;
+}
+body {
+  background: #dfdfdf;
+  color: #868686;
+  font-family: sintony;
+}
+div.head {
+  margin-top: 15px;
+  font-size: 22px;
+  text-align: center;
+  font-family: sintony;
+}
+div.head.subtitle {
+  margin-top: 0px;
+  font-size: 18px;
+  font-family: acme;
+}
+footer a:hover {
+  text-decoration: none;
+}
