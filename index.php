@@ -18,4 +18,5 @@
 				</div>
 			</div>
 		</div>
+	</div>
 <?php require_once('required_files/footer.php'); ?>
