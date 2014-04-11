@@ -34,7 +34,7 @@ nav ul li {
   margin: 0 0 0 0;
 }
 nav ul li:hover {
-  background: #f16040;
+  background: #ef451e;
 }
 nav ul li a {
   padding: 20px 62px 20px 62px;
@@ -52,31 +52,31 @@ nav ul li a:hover {
   background: #cf6baa;
 }
 .about:hover {
-  background: #cb5fa3;
+  background: #c34494;
 }
 .admin {
   background: #f2c24d;
 }
 .admin:hover {
-  background: #f1bd3f;
+  background: #efb21d;
 }
 .login {
   background: #a3d178;
 }
 .login:hover {
-  background: #9bcd6d;
+  background: #89c452;
 }
 .archieves {
   background: #78ccd0;
 }
 .archieves:hover {
-  background: #6dc8cc;
+  background: #52bec3;
 }
 .source {
   background: #f26c4e;
 }
 .source:hover {
-  background: #f16040;
+  background: #ef451e;
 }
 body {
   background: #dfdfdf;

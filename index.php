@@ -3,7 +3,7 @@
 		<div class="row">
 			<div class="col-sm-12" style="margin:0 auto;">
 				<div class="jumbotron">
-					<p align="center">Login using your University Serial Number</p>
+					<p align="center" style="font-family:'acme'">Login using your University Serial Number</p>
 					<div class="row">
 						<div class="col-sm-6">
 						<form action="studentlogin.php" method="POST">
@@ -18,4 +18,4 @@
 				</div>
 			</div>
 		</div>
-		<?php require_once('required_files/footer.php'); ?>
+<?php require_once('required_files/footer.php'); ?>
