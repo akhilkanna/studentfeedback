@@ -14,11 +14,11 @@
 	<div class="head subtitle">Login</div>
 	<nav>
 		<ul>
-			<li><a href="#">Home</a></li>
-			<li><a href="#" class="about">About Feedback</a></li>
-			<li><a href="#" class="admin">Admin</a></li>
-			<li><a href="#" class="login">Login</a></li>
-			<li><a href="#" class="archieves">Archieves</a></li>
-			<li><a href="#" class="source">Source on Github</a></li>
+			<li><a href="index.php">Home</a></li>
+			<li><a href="about.php" class="about">About Feedback</a></li>
+			<li><a href="adminlogin.php" class="admin">Admin</a></li>
+			<li><a href="studentlogin.php" class="login">Login</a></li>
+			<li><a href="admin/" class="result">Results</a></li>
+			<li><a href="https://www.github.com/cyberhck/studentfeedback" class="source">Source on Github</a></li>
 		</ul>
 	</nav>
