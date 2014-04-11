@@ -1,7 +1,7 @@
 <?php 
 if(isset($_POST['submit']))
 {
-	die("submitted!");
+	
 }else{
 ?>
 <?php require_once('required_files/header.php'); ?>
