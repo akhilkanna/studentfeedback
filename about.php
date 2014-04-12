@@ -3,7 +3,7 @@
 		<div class="row">
 			<div class="col-sm-12" style="margin:0 auto;">
 				<div class="jumbotron">
-					<p align="center" style="font-family:'acme'">About the developer</p>
+					<p align="center" style="font-family:'acme'">About developers</p>
 					<div class="row">
 						<!-- <div class="col-sm-6">
 						<form action="studentlogin.php" method="POST">
