@@ -97,3 +97,7 @@ div.head.subtitle {
 footer a:hover {
   text-decoration: none;
 }
+.social{
+  height: 32px;
+  width:32px;
+}
