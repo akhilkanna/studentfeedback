@@ -33,14 +33,24 @@
 	<?php $title="Admin >> Add Admin"; require_once("required_files/header.php"); ?>
 	<div class="container">
 		<div class="row">
-			<?php if($_GET['error']=="true"){
+			<?php if(isset($_GET['error'])){
+				if($_GET['error']=="true"){
 				$class="alert-danger";
 				$text="There was some problem in creation of user, please fill the form without any mistakes then try again.";
 				}else{
 					$class="alert-success";
 					$text="User Sucessfully Created!";
-					} ?>
-					<div class="alert <?php echo $class ?>" align="center"><?php echo $text; ?></div>
+					}
+					?>
+<div class="alert <?php echo $class ?>" align="center"><?php echo $text; ?></div>
+					<?php
+
+				} 
+
+				?>
+					
+
+
 			<div class="alert alert-warning" align="center">Admins once created, can't be deleted. Be careful what you wish for.</div>
 			<div class="col-sm-6 col-sm-offset-3">
 				<form action="<?php echo $_SERVER['PHP_SELF']; ?>" method="POST">
