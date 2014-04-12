@@ -34,21 +34,18 @@
 				echo "<p class='text-danger'>No faculty added. Try adding some.</p>";
 			}else{
 		?>
+		<div><a href="changePasswd.php">Change Password</a> | <a href="addAdmin.php">Add Admin</a></div>
 		<table class="table">
 			<tr><th>Name</th> <th>Subject Code</th> <th>Subject Name</th> <th>Semester</th> <th>Section</th> <th>Department</th><th></th> </tr>
 			<?php while($data=mysql_fetch_object($query)){
 			?>
 			<tr><td><?php echo $data->name;?></td><td><?php echo $data->subCode; ?></td> <td><?php echo $data->subName; ?></td> <td><?php echo $data->semester; ?></td> <td><?php echo $data->sec; ?></td> <td><?php echo $data->department; ?></td> <td><span style="cursor:pointer;" data-id="<?php echo $data->id; ?>" class="glyphicon glyphicon-trash text-info delete"> Delete</span></td></tr>
-
 			<?php
 				}
 			?>
-
 		</table>
 					<?php
-
 				}
-
 			 ?>
 			 <table class="table">
 			 	<tr><th>Name</th> <th>Subject Code</th> <th>Subject Name</th> <th>Semester</th> <th>Section</th> <th>Department</th><th></th> </tr>
