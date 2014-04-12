@@ -1,0 +1,9 @@
+<?php 
+if(isset($_COOKIE['password'])){
+	setcookie("password","",time()-3600);
+}
+if(isset($_COOKIE['usn'])){
+	setcookie("usn","",time()+3600);
+}
+header("location:index.php");
+ ?>
