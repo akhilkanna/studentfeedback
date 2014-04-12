@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
-	<title>Login</title>
+	<title><?php $val= isset($title)? $title: "Feedback form"; echo $val;?></title>
 	<link rel="icon" type="shortcut-icon" href="feedback.jpg">
 	<link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
 	<link rel="stylesheet" href="styles.css">

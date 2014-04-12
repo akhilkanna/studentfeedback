@@ -1,4 +1,4 @@
-<?php require_once('required_files/header.php'); ?>
+<?php $title="Welcome! Feedback form 3"; require_once('required_files/header.php'); ?>
 	<div class="container">
 		<div class="row">
 			<div class="col-sm-12" style="margin:0 auto;">

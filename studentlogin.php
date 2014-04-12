@@ -19,7 +19,7 @@ if(isset($_POST['submit']))
 	}
 }else{
 ?>
-<?php require_once('required_files/header.php'); ?>
+<?php $title="Login Student";require_once('required_files/header.php'); ?>
 	<div class="jumbotron">
 		<p align="center" style="font-family:'acme'">Login using your University Serial Number</p>
 		<?php if(isset($_GET['error'])){
