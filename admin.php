@@ -15,7 +15,7 @@
 	if($a!=true){
 		header("location:adminlogin.php?error=notLoggedIn");
 	}else{?>
-	<?php $title="Admin >> Add Member"; require_once("required_files/header.php"); ?>
+	<?php $title="Admin >> Add or Delete Member"; require_once("required_files/header.php"); ?>
 	<div class="container">
 		<?php 
 	$form = '<tr><td><input type="text" name="name" class="form-control" style="width:250px;"></td>
@@ -24,7 +24,7 @@
 	<td><input type="text" name="sem" class="form-control" style="width:150px;"></td>
 	<td><input type="text" name="section" class="form-control" style="width:150px;"></td>
 	<td><input type="text" name="department" class="form-control" style="width:150px;"></td>
-	<td><input type="button" name="submit" class="btn btn-primary" value="Add"></td></td>';
+	<td><input type="submit" id="addMember" name="submit" class="btn btn-primary" value="Add"></td></td>';
 	 ?>
 
 		<?php
@@ -32,7 +32,7 @@
 			$sql="SELECT * FROM `$db_name`.`faculty`";
 			$query=mysql_query($sql,$connection);
 			if(mysql_num_rows($query)==0){
-				echo "<p class='text-danger'>No Faculty inserted. Try adding some.</p>";
+				echo "<p class='text-danger'>No faculty added. Try adding some.</p>";
 			}else{
 		?>
 		<table class="table">
@@ -55,33 +55,129 @@
 			 ?>
 			 <table class="table">
 			 	<tr><th>Name</th> <th>Subject Code</th> <th>Subject Name</th> <th>Semester</th> <th>Section</th> <th>Department</th><th></th> </tr>
-			 	<form action="ajax/addmember.php">
+			 	<form action="ajax/addmember.php" id="membershipForm" method="post">
 					<?php echo $form; ?>
 				</form>
 			 </table>
 
 	</div>
 	
-
-
-
-
-
-
-
+	
 
 
 
 	<script>
-	$(document).ready(function() {
-		$(".delete").click(function(event) {
-			if(confirm("This might hurt! Do you really want to delete? This can't be undone")){
-				console.log("delete");
+
+	$("#membershipForm").on('submit',function(e){
+		e.preventDefault();
+		$data=$(this).serialize();
+		$.ajax({
+			url: 'ajax/addMember.php',
+			type: 'POST',
+			dataType: 'text',
+			data: $data,
+		})
+		.done(function(e) {
+			if(e!="Fail"){
+				a=$("#membershipForm").serializeArray()
+				row=$(document.createElement("tr"));
+				for (var i = 0;i<=a.length - 1; i++) {
+					data=$(document.createElement("td"));
+					data.html(a[i].value);
+					row.append(data);
+				}
+				data=$(document.createElement("td"))
+				data.html("<span class='glyphicon glyphicon-trash text-info delete' data-id='"+e+"' onClick=\"alert('You must refresh page before deleting newly added members')\" style='cursor:pointer;'> Delete</span>");
+				row.append(data)
+				table=$("table").first();
+				table.append(row);
 			}else{
-				console.log("don't delete")
+				$div=document.createElement("div");
+				$($div).addClass('alert').addClass('alert-danger').html('Something went wrong, please try again!');
+				$table=$('table').first();
+				$table.append($div);
+			}
+		})
+		.fail(function() {
+			$div=document.createElement("div");
+			$($div).addClass('alert').addClass('alert-danger').html('Seems like network is down!');
+			$table=$('table').first();
+			$table.append($div);
+		})
+		
+	})
+
+
+
+
+
+		$(".delete").click(function(event) {
+			$this=$(this);
+			$row=$this.parent().parent();
+			$data=$this.data("id");
+			if(confirm("This might hurt, Don't say we didn't warn you. And Deleting Can't be undone")){
+				$.ajax({
+					url: 'ajax/deleteMember.php',
+					type: 'POST',
+					dataType: 'text',
+					data: {id: $data},
+				})
+				.done(function(e) {
+					if(e=="Success"){
+						$row.hide("slow");
+					}
+					else{
+						$div=document.createElement("div");
+						$($div).addClass('alert').addClass('alert-danger').html('Please check your connection!');
+						$table=$('table').first();
+						$table.append($div);
+					}
+					
+				})
+				.fail(function(e) {
+						$div=document.createElement("div");
+						$($div).addClass('alert').addClass('alert-danger').html('Something went wrong, please try again!');
+						$table=$('table').first();
+						$table.append($div);
+				});
+				
 			}
 		});
-	});
+
+		function deletehandler(){
+			$this=$(this);
+			$row=$this.parent().parent();
+			$data=$this.data("id");
+			if(confirm("This might hurt, Don't say we didn't warn you. And Deleting Can't be undone")){
+				$.ajax({
+					url: 'ajax/deleteMember.php',
+					type: 'POST',
+					dataType: 'text',
+					data: {id: $data},
+				})
+				.done(function(e) {
+					if(e=="Success"){
+						$row.hide("slow");
+					}
+					else{
+						$div=document.createElement("div");
+						$($div).addClass('alert').addClass('alert-danger').html('Please check your connection!');
+						$table=$('table').first();
+						$table.append($div);
+					}
+					
+				})
+				.fail(function(e) {
+						$div=document.createElement("div");
+						$($div).addClass('alert').addClass('alert-danger').html('Something went wrong, please try again!');
+						$table=$('table').first();
+						$table.append($div);
+				});
+				
+			}
+		});
+		}
+
 	</script>
 	<?php require_once("required_files/footer.php"); ?>
 	<?php
