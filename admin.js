@@ -21,6 +21,8 @@
 				row.append(data)
 				table=$("table").first();
 				table.append(row);
+				$("#membershipForm")[0].reset();
+				$("#name")[0].focus();
 			}else{
 				$div=document.createElement("div");
 				$($div).addClass('alert').addClass('alert-danger').html('Something went wrong, please try again!');
