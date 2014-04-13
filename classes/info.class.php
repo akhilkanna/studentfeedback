@@ -1,4 +1,4 @@
-<?PHP
+<?php
 class getInfo
 {
 	private $usn,$branchVar,$year;

@@ -16,12 +16,16 @@
 						</div> -->
 						<div class="col-sm-6">
 								 <div class="footer text-center">
-										      <span class="center lead ">Nishchal Gautam</span><br>
+										      <span class="center lead">Nishchal Gautam</span><br>
 										      <div class="row">
-										      	<div class="col-sm-6"><img class="img-rounded pull-right" src="img/nishchal.jpg"></div>
-										      	<div class="col-sm-6">  <span class="small">connect with me : </span><br>
+										      	<div class="col-sm-6"><img class="img-circle pull-right" src="img/nishchal.jpg"></div>
+										      	<div class="col-sm-6">  
+										      		Passionate Web Developer<br>
+										      		Enthusiastic Entrepreneur<br>
+										      		<blockquote class="blockquote blockquote-reverse"><p>When Technology Becomes Passion</p></blockquote>
+										      		<span class="small">connect with me : </span><br>
 
-										      		<blockquote><p class="blockquote">When Technology Becomes Passion</p> </blockquote>
+										      		
 										          <!-- <a href="mailto:sijanshrestha2@gmail.com"><img src="img/glyphicons_010_envelope.png" alt=""></a> -->
 										          <br><a href="https://www.facebook.com/cyberkiller.nishchal" target="_blank"><img class="social" src="img/facebook.ico" alt=""></a>
 										          <a href="https://plus.google.com/+NishchalGautam " target="_blank"><img class="social" src="img/google.ico" alt=""></a>
