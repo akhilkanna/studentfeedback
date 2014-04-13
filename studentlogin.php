@@ -4,6 +4,12 @@ if(isset($_POST['submit']))
 	if((!isset($_POST['usn'],$_POST['password'])) || $_POST['usn']=='' || $_POST['password']==''){
 		header("location:studentlogin.php?error=emptyFields");
 	}
+	require_once("classes/info.class.php");
+	$a=new getInfo($_POST['usn']);
+	if(!($a->valid)){
+		header("location:studentlogin.php?error=usnInvalid");
+		die();
+	}
 	$usn=strtolower($_POST['usn']);
 	$password=strtolower($_POST['password']);
 	if($usn==$password){
@@ -26,7 +32,7 @@ if(isset($_POST['submit']))
 		?>	
 		<div class="alert alert-danger col-sm-6 col-sm-offset-3" align="center"><?php if($_GET['error']=="emptyFields"){
 			echo "Form was not filled completely!";
-			}else{echo "Username and password mismatch";
+			}elseif($_GET['error']=="usnInvalid"){echo "Usn you entered is invalid!";}else{echo "Username and password mismatch";
 			} ?>
 		</div>
 		<?php
