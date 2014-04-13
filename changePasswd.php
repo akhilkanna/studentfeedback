@@ -58,11 +58,12 @@
 
 				?>
 			<div class="col-sm-6 col-sm-offset-3">
+				<p class="lead">Your password can't be more than 8 characters.</p>
 				<form action="<?php echo $_SERVER['PHP_SELF']; ?>" method="POST">
 				<!-- could have given a reCaptcha to solve, but we are in a college computer so that much security isn't required! -->
-				<p><input placeholder="Old Password" type="password" name="oldPass" class="form-control"></p>
-				<p><input placeholder="New Password" type="password" name="password" class="form-control"></p>
-				<p><input placeholder="Verify New Password" type="password" name="repassword" class="form-control"></p>
+				<p><input placeholder="Old Password" maxlength="8" type="password" name="oldPass" class="form-control"></p>
+				<p><input placeholder="New Password" maxlength="8" type="password" name="password" class="form-control"></p>
+				<p><input placeholder="Verify New Password" maxlength="8" type="password" name="repassword" class="form-control"></p>
 				<p><input type="submit" name="submit" value="submit" class="btn btn-default btn-login btn-block"></p>
 		</form>
 			</div>

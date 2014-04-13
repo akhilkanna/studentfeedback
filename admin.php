@@ -18,7 +18,7 @@
 	<?php $title="Admin >> Add or Delete Member"; require_once("required_files/header.php"); ?>
 	<div class="container">
 		<?php 
-	$form = '<tr><td><input type="text" name="name" class="form-control" style="width:250px;"></td>
+	$form = '<tr><td><input type="text" id="name" name="name" class="form-control" style="width:250px;"></td>
 	<td><input type="text" name="subCode" class="form-control" style="width:150px;"></td>
 	<td><input type="text" name="subName" class="form-control" style="width:150px;"></td>
 	<td><input type="text" name="sem" class="form-control" style="width:150px;"></td>

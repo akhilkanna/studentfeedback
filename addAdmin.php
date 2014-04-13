@@ -15,7 +15,6 @@
 	if($a!=true){
 		header("location:adminlogin.php?error=notLoggedIn");
 	}else{?>
-
 	<?php if(isset($_POST['submit'])){
 		if($_POST['username']==""|| $_POST['password']==""||$_POST['password']!=$_POST['repassword']){
 			header("location:addAdmin.php?error=true");
@@ -29,7 +28,6 @@
 			header("location:addAdmin.php?error=false");
 		}
 		}else{ ?>
-
 	<?php $title="Admin >> Add Admin"; require_once("required_files/header.php"); ?>
 	<div class="container">
 		<div class="row">
@@ -44,24 +42,18 @@
 					?>
 <div class="alert <?php echo $class ?>" align="center"><?php echo $text; ?></div>
 					<?php
-
 				} 
-
 				?>
-					
-
-
 			<div class="alert alert-warning" align="center">Admins once created, can't be deleted. Be careful what you wish for.</div>
 			<div class="col-sm-6 col-sm-offset-3">
 				<form action="<?php echo $_SERVER['PHP_SELF']; ?>" method="POST">
 				<p><input placeholder="Username" type="text" name="username" class="form-control"></p>
-				<p><input placeholder="Password" type="password" name="password" class="form-control"></p>
-				<p><input placeholder="Just In case, Re-type Password" type="password" name="repassword" class="form-control"></p>
+				<p><input maxlength="8" placeholder="Password" type="password" name="password" class="form-control"></p>
+				<p><input maxlength="8" placeholder="Just In case, Re-type Password" type="password" name="repassword" class="form-control"></p>
 				<p><input type="submit" name="submit" value="submit" class="btn btn-default btn-login btn-block"></p>
 		</form>
 			</div>
 		</div>
-
 	</div>
 	<?php require_once("required_files/footer.php"); ?>
 	<?php
