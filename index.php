@@ -8,7 +8,7 @@
 						<div class="col-sm-6">
 						<form action="studentlogin.php" method="POST">
 							<p><input type="text" name="usn" class="form-control" placeholder="University Serial Number" style="width:400px;"></p><p><input type="password" name="password" style="width:400px;" class="form-control" placeholder="Password"></p>
-							<input type="submit" class="btn btn-default btn-login">
+							<input type="submit" name="submit" class="btn btn-default btn-login">
 						</form>
 						</div>
 						<div class="col-sm-6 text-muted" style="font-size:16px;"><span>Feel Free to submit the ratings honestly, we respect your privacy.</span>

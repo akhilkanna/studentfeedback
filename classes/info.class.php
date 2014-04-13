@@ -6,7 +6,7 @@ class getInfo
 	function __construct($usn)
 	{
 		$this->usn=strtoupper($usn);
-		$pattern="/([0-9]{2})([A-Z]{2})(?:[0-9]{3})/";
+		$pattern="/^1VE([0-9]{2})([A-Z]{2})(?:[0-9]{3})/";
 		if(preg_match($pattern, $usn,$matches)){
 			$this->valid=true;
 			$this->year=$matches[1];
