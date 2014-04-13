@@ -17,7 +17,7 @@
 						<div class="col-sm-6">
 								 <div class="footer text-center">
 										      <span class="center lead">Nishchal Gautam</span><br>
-										      <div class="row">
+										      <div class="row>"
 										      	<div class="col-sm-6"><img class="img-circle pull-right" src="img/nishchal.jpg"></div>
 										      	<div class="col-sm-6">  
 										      		Passionate Web Developer<br>
