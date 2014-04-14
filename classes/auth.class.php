@@ -1,7 +1,4 @@
 <?php
-	/**
-	* 
-	*/
 	class authenticate
 	{
 		public static $db_host,$db_user,$db_pass,$db_name,$username,$password;
