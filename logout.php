@@ -6,6 +6,6 @@ if(isset($_COOKIE['password'])){
 }
 if(isset($_COOKIE['usn'])){
 	setcookie("usn","",time()+3600);
-	header("location:index.php");
+	header("location:studentlogin.php");
 }
 ?>

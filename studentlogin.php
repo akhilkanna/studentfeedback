@@ -8,7 +8,6 @@ if(isset($_POST['submit']))
 	$a=new getInfo($_POST['usn']);
 	if(!($a->valid)){
 		header("location:studentlogin.php?error=usnInvalid");
-		die();
 	}
 	$usn=strtolower($_POST['usn']);
 	$password=strtolower($_POST['password']);
@@ -16,10 +15,11 @@ if(isset($_POST['submit']))
 		setcookie("sem",$_POST['sem'],time()+3600,"/");
 		setcookie("sec",$_POST['sec'],time()+3600,"/");
 		setcookie("usn", $usn, time()+35000, "/");
+		setcookie("department",$_POST['branch'],time()+3600,"/");
 		require_once("required_files/config.php");
 		$usn=mysql_real_escape_string($usn);
 		$con=mysql_connect($db_host,$db_user,$db_pass);
-		$sql="INSERT INTO `$db_name`.`usns` (id,usn) VALUES (NULL,$usn);";
+		$sql="INSERT INTO `$db_name`.`usns` (id,usn) VALUES (NULL,'$usn');";
 		mysql_query($sql);
 		header("location:feedback.php");
 	}else{
@@ -34,7 +34,7 @@ if(isset($_POST['submit']))
 		?>	
 		<div class="alert alert-danger col-sm-6 col-sm-offset-3" align="center"><?php if($_GET['error']=="emptyFields"){
 			echo "Form was not filled completely!";
-			}elseif($_GET['error']=="usnInvalid"){echo "Usn you entered is invalid!";}else{echo "Username and password mismatch";
+			}elseif($_GET['error']=="usnInvalid"){echo "Usn you entered is invalid!";}elseif($_GET['error']=="loginRequired"){echo "You must login to continue";}else{echo "Username and password mismatch";
 			} ?>
 		</div>
 		<?php
@@ -56,8 +56,8 @@ if(isset($_POST['submit']))
 							<option value="B">B</option>
 						</select>
 					</p>
-					<p>Branch:
-						<select name="branch" id="branch" class="select form-control" disabled style="width:400px;">
+					<p>Branch: <input type="hidden" id="hbranch" name="branch" />
+						<select id="dbranch" class="select form-control" disabled style="width:400px;">
 							<option>ISE</option>
 							<option>CSE</option>
 							<option>ECE</option>
@@ -102,7 +102,9 @@ if(isset($_POST['submit']))
 		})
 		.done(function(e) {
 			if(e!="fail"){
-				$("#branch")[0].value=e;
+				$("#dbranch")[0].value=e;
+				$("#hbranch")[0].value=e;
+				console.log($("#hbranch")[0].value);
 			}else{
 				return 0;
 			}
