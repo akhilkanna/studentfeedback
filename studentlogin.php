@@ -19,7 +19,7 @@ if(isset($_POST['submit']))
 		require_once("required_files/config.php");
 		$usn=mysql_real_escape_string($usn);
 		$con=mysql_connect($db_host,$db_user,$db_pass);
-		$sql="INSERT INTO `$db_name`.`usns` (id,usn) VALUES (NULL,$usn);";
+		$sql="INSERT INTO `$db_name`.`usns` (id,usn) VALUES (NULL,'$usn');";
 		mysql_query($sql);
 		header("location:feedback.php");
 	}else{
