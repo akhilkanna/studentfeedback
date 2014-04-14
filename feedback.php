@@ -20,7 +20,7 @@ if($data){
 			header("location:feedback3.php");
 			break;
 		case 'c':
-			die("Go to your class");
+			die("about.php?msg=completed");
 		default:
 			break;
 	}
