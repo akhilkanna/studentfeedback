@@ -62,7 +62,7 @@ if(isset($_POST['submit'])){
 $sql="SELECT `id`,`subName` FROM `$db_name`.`faculty` WHERE `semester`='$sem' AND `sec`='$sec' AND `department`='$department'";
 $query=mysql_query($sql)or die(mysql_error());
 ?>
-<?php require_once("required_files/header.php"); ?>
+<?php $title="Feedback Form 1"; require_once("required_files/header.php"); ?>
 <a href="logout.php" class="col-sm-offset-1 btn btn-warning" style="margin-bottom:20px;">Logout</a>
 <?php while ($data=mysql_fetch_object($query)) {
 	$listIDs[]=$data->id;
