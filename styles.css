@@ -1,107 +1,18 @@
-.btn-login {
-  background: #41b5bb;
-  border-radius: 0px;
-  padding: 10px 50px 10px 50px;
-  color: white;
-}
-.btn-login:hover {
-  background: #3eaeb3;
-  color: white;
-}
-@font-face {
-  font-family: acme;
-  src: url(fonts/Acme/Acme-Regular.ttf);
-}
-@font-face {
-  font-family: sintony;
-  src: url(fonts/Sintony/Sintony-Regular.ttf);
-}
-nav {
-  list-style: none;
-  text-align: center;
-  margin-top: 15px;
-  margin-bottom: 15px;
-}
-nav ul {
-  margin: 0 auto;
-}
-nav li {
-  position: relative;
-  display: table-cell;
-}
-nav ul li {
-  background: #f26c4e;
-  margin: 0 0 0 0;
-}
-nav ul li:hover {
-  background: #ef451e;
-}
-nav ul li a {
-  padding: 20px 62px 20px 62px;
-  font-size: 18px;
-  display: block;
-  position: relative;
-  margin: 0 0 0 0;
-  color: #FFFFFF;
-}
-nav ul li a:hover {
-  color: #FFFFFF;
-  text-decoration: none;
-}
-.about {
-  background: #cf6baa;
-}
-.about:hover {
-  background: #c34494;
-}
-.admin {
-  background: #f2c24d;
-}
-.admin:hover {
-  background: #efb21d;
-}
-.login {
-  background: #a3d178;
-}
-.login:hover {
-  background: #89c452;
-}
-.result {
-  background: #78ccd0;
-}
-.result:hover {
-  background: #52bec3;
-}
-.source {
-  background: #f26c4e;
-}
-.source:hover {
-  background: #ef451e;
-}
-body {
-  background: #dfdfdf;
-  color: #868686;
-  font-family: sintony;
-}
-div.head {
-  margin-top: 15px;
-  font-size: 22px;
-  text-align: center;
-  font-family: sintony;
-}
-div.head.subtitle {
-  margin-top: 0px;
-  font-size: 18px;
-  font-family: acme;
-}
-footer {
-  padding: 20px;
-  margin-bottom: 50px;
-}
-footer a:hover {
-  text-decoration: none;
-}
-.social {
-  height: 32px;
-  width: 32px;
-}
+.btn-login{background:#41b5bb;border-radius:0;padding:10px 50px 10px 50px;color:#fff}.btn-login:hover{background:#3eaeb3;color:#fff}
+@font-face{font-family:acme;src:url(fonts/Acme/Acme-Regular.ttf)}@font-face{font-family:sintony;src:url(fonts/Sintony/Sintony-Regular.ttf)}nav{list-style:none;text-align:center;margin-top:15px;margin-bottom:15px}
+nav ul{margin:0 auto}
+nav li{position:relative;display:table-cell}
+nav ul li{background:#f26c4e;margin:0 0 0 0}nav ul li:hover{background:#ef451e}
+nav ul li a{padding:20px 62px 20px 62px;font-size:18px;display:block;position:relative;margin:0 0 0 0;color:#fff}nav ul li a:hover{color:#fff;text-decoration:none}
+.about{background:#cf6baa}.about:hover{background:#c34494}
+.admin{background:#f2c24d}.admin:hover{background:#efb21d}
+.login{background:#a3d178}.login:hover{background:#89c452}
+.result{background:#78ccd0}.result:hover{background:#52bec3}
+.source{background:#f26c4e}.source:hover{background:#ef451e}
+body{background:#dfdfdf;color:#868686;font-family:sintony}
+div.head{margin-top:15px;font-size:22px;text-align:center;font-family:sintony}
+div.head.subtitle{margin-top:0;font-size:18px;font-family:acme}
+footer{padding:20px;margin-bottom:50px}
+footer a:hover{text-decoration:none}
+.social{height:32px;width:32px}
+table.table.feedback th{font-size:12px}
