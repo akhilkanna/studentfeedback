@@ -9,8 +9,6 @@ $usn=mysql_real_escape_string($_COOKIE['usn']);
 $sec=mysql_real_escape_string($_COOKIE['sec']);
 $sem=mysql_real_escape_string($_COOKIE['sem']);
 $department=mysql_real_escape_string($_COOKIE['department']);
-if(isset($_POST['submit'])){
-}else{
 $data=mysql_fetch_object(mysql_query("SELECT * FROM `$db_name`.`tracker` WHERE usn = '$usn';"));
 if($data){
 	$form=$data->formSub;
@@ -19,14 +17,20 @@ if($data){
 			header("location:feedback2.php");
 			break;
 		case 'b':
-			header("location:feedback3.php");
 			break;
 		case 'c':
-			die("Go to your class");
+			header("location:about.php?msg=completed");
 		default:
 			break;
 	}
 }
+if(isset($_POST['submit'])){
+	$feedback=mysql_real_escape_string($_POST['feedback']);
+	mysql_query("INSERT INTO `$db_name`.`feedbackStudents` (id,usn,message) VALUES (NULL,md5(usn),'$feedback');") or die(mysql_error());
+	mysql_query("UPDATE `$db_name`.`tracker` SET formSub='c' WHERE usn='$usn'");
+	header("location:about.php?msg=completed");
+}else{
+
 ?>
 <?php require_once("required_files/header.php"); ?>
 <div class="container">
