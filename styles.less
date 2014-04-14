@@ -8,6 +8,7 @@
 @loginbg:#a3d178;
 @archievesbg:#78ccd0;
 @sourcebg:@homebg;
+@tableTdBorder:darken(@bodyBackground,5);
 .btn-login{
 	background: darken(@archievesbg,15);
 	border-radius: 0px;
@@ -117,4 +118,7 @@ footer a:hover{
 }
 table.table.feedback th{
 	font-size: 12px;
+}
+table.table.feedback td,table.table.feedback th{
+	border-right: 1px solid @tableTdBorder;
 }
