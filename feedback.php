@@ -87,7 +87,7 @@ $row=$row.$data."</th></tr>";
 		$a="<tr><td>".$full."</td>";
 		echo $a.$b."</tr>";
 	} ?>
-<tr><td colspan="8" align="right">Verify that the data you entered is correct and then click next</td>
+<tr><td colspan="8" style="vertical-align:middle;" align="right">Verify that the data you entered is correct and then click next</td>
 <td><input name="submit" type="submit" value="Next >>" class="btn btn-default btn-login"></td></tr>
 </table>
 </form>
