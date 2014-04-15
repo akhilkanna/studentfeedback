@@ -103,16 +103,7 @@ $(document).ready(function() {
 	$(".score img").tooltip();
 });
 
-/*
-	$(document).ready(function() {
-		$.each($('.score'), function(index, val) {
-			$this=$(this)
-			name=$this.data('name');
-			$this.raty({scoreName:name,hints:['poor','satisfactory','good','very good','excellent']})
-		});
-		$("th div").tooltip({placement:"left"});
-		$('.score img').tooltip();*/
-		</script>
+</script>
 <?php require_once("required_files/footer.php"); ?>
 <?php
 }

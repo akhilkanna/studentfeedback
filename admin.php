@@ -14,6 +14,7 @@
 	$a=authenticate::check();
 	if($a!=true){
 		header("location:adminlogin.php?error=notLoggedIn");
+		die();
 	}else{?>
 	<?php $title="Admin >> Add or Delete Member"; require_once("required_files/header.php"); ?>
 	<div class="container">

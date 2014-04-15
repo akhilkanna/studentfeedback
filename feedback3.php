@@ -10,6 +10,9 @@ $sec=mysql_real_escape_string($_COOKIE['sec']);
 $sem=mysql_real_escape_string($_COOKIE['sem']);
 $department=mysql_real_escape_string($_COOKIE['department']);
 $data=mysql_fetch_object(mysql_query("SELECT * FROM `$db_name`.`tracker` WHERE usn = '$usn';"));
+if(!$data){
+	header("location:feedback.php");
+}
 if($data){
 	$form=$data->formSub;
 	switch ($form) {
