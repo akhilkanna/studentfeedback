@@ -2,8 +2,9 @@
 @font-face{font-family:acme;src:url(fonts/Acme/Acme-Regular.ttf)}@font-face{font-family:sintony;src:url(fonts/Sintony/Sintony-Regular.ttf)}nav{list-style:none;text-align:center;margin-top:15px;margin-bottom:15px}
 nav ul{margin:0 auto}
 nav li{position:relative;display:table-cell}
-nav ul li{background:#f26c4e;margin:0 0 0 0}nav ul li:hover{background:#ef451e}
-nav ul li a{padding:20px 62px 20px 62px;font-size:18px;display:block;position:relative;margin:0 0 0 0;color:#fff}nav ul li a:hover{color:#fff;text-decoration:none}
+nav ul li{margin:0 0 0 0}nav ul li a{padding:20px 62px 20px 62px;font-size:18px;display:block;position:relative;margin:0 0 0 0;color:#fff}nav ul li a:hover{color:#fff;text-decoration:none}
+nav{width:1320px;margin:0 auto;margin-top:15px;margin-bottom:15px}
+.home{background:#f26c4e}.home:hover{background:#ef451e}
 .about{background:#cf6baa}.about:hover{background:#c34494}
 .admin{background:#f2c24d}.admin:hover{background:#efb21d}
 .login{background:#a3d178}.login:hover{background:#89c452}
