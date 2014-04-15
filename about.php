@@ -27,6 +27,21 @@
 						</div>
 						<div class="col-sm-6">
 							right container
+							<span class="center lead">Sijan Shrestha</span><br>
+								<div class="row">
+									<div class="col-sm-6">
+										Passionate coder<br>
+										<br>
+										<blockquote class="blockquote blockquote-reverse"><p>technology is What matters </p></blockquote>
+										<span class="small">connect with me : </span><br>
+										<br><a href="https://www.facebook.com/sijanshs" target="_blank"><img class="social" src="img/facebook.ico" alt=""></a>
+									    <a href="https://plus.google.com/sijanshresthabeo " target="_blank"><img class="social" src="img/google.ico" alt=""></a>
+									    <a href="https://www.twitter.com/sijan " target="_blank"><img class="social" src``="img/twitter.ico" alt=""></a>
+									    <a href="skype:sidzanshrestha?call" target="_blank"><img class="social" src="img/skype.ico" alt=""></a>
+									</div>
+									<div class="col-sm-6"><img class="img-circle pull-right" src="#"></div>
+								</div>
+
 						</div>
 					</div>
 				</div>
