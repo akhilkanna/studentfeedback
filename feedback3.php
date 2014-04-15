@@ -26,7 +26,7 @@ if($data){
 }
 if(isset($_POST['submit'])){
 	$feedback=mysql_real_escape_string($_POST['feedback']);
-	mysql_query("INSERT INTO `$db_name`.`feedbackStudents` (id,usn,message) VALUES (NULL,md5(usn),'$feedback');") or die(mysql_error());
+	mysql_query("INSERT INTO `$db_name`.`feedbackStudents` (id,usn,message) VALUES (NULL,md5($usn),'$feedback');") or die(mysql_error());
 	mysql_query("UPDATE `$db_name`.`tracker` SET formSub='c' WHERE usn='$usn'");
 	header("location:about.php?msg=completed");
 }else{
