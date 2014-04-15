@@ -6,7 +6,7 @@
 	<link rel="icon" type="shortcut-icon" href="feedback.jpg">
 	<link rel="stylesheet" href="/bootstrap/css/bootstrap.min.css">
 	<link rel="stylesheet" href="/styles.css">
-	<script type="text/javascript" language="javascript" src="//cdn/jquery.js"></script>
+	<script type="text/javascript" language="javascript" src="/jquery.js"></script>
 	<script type="text/javascript" language="javascript" src="/bootstrap/js/bootstrap.min.js"></script>
 </head>
 <body>
