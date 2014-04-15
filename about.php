@@ -21,7 +21,7 @@
 									    <a href="https://www.twitter.com/nishchal_619 " target="_blank"><img class="social" src="img/twitter.ico" alt=""></a>
 									    <a href="skype:nishchal.gautam?call" target="_blank"><img class="social" src="img/skype.ico" alt=""></a>
 									</div>
-									<div class="col-sm-6"><img class="img-circle pull-right" style="width:210;height:210" src="img/nishchal.jpg"></div>
+									<div class="col-sm-6"><img class="img-circle pull-right" style="width:210px;height:210px" src="img/nishchal.jpg"></div>
 								</div>
 							</div>
 						</div>
