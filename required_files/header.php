@@ -14,7 +14,7 @@
 	<div class="head subtitle">Login</div>
 	<nav>
 		<ul>
-			<li><a href="/index.php">Home</a></li>
+			<li><a href="/index.php" class="home">Home</a></li>
 			<li><a href="/about.php" class="about">About Feedback</a></li>
 			<li><a href="/adminlogin.php" class="admin">Admin</a></li>
 			<li><a href="/studentlogin.php" class="login">Login</a></li>
