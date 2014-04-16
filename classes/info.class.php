@@ -1,68 +1,21 @@
 <?php
 class getInfo
 {
-	private $usn,$branchVar,$year;
-	public $valid;
-	function __construct($usn)
+	public $valid,$usn,$branch,$sem,$sec,$enabled;
+	function __construct($con,$db_name,$usn)
 	{
-		$this->usn=strtoupper($usn);
-		$pattern="/^1VE([0-9]{2})([A-Z]{2})(?:[0-9]{3})/";
-		if(preg_match($pattern, $usn,$matches)){
-			$this->valid=true;
-			$this->year=$matches[1];
-			$this->branchVar=$matches[2];
-
-		}else{
+		$sql="SELECT * FROM `$db_name`.`students` WHERE usn='$usn'";
+		$query=mysql_query($sql);
+		$data=mysql_fetch_object($query);
+		if(mysql_num_rows($query)==0){
 			$this->valid=false;
-		}
-
-	}
-	function getBranch(){
-		$branchVar=$this->branchVar;
-		switch ($branchVar)
-		{
-			case 'IS':
-				return 'ISE';
-				break;
-
-			case 'CS':
-				return 'CSE';
-				break;
-
-			case 'ME':
-				return 'ME';
-				break;
-
-			case 'EC':
-				return 'ECE';
-				break;
-
-			case 'EE':
-				return 'EEE';
-				break;
-			default:
-				return false;
-				break;
-
-		}
-	}
-	function getSem(){
-		switch ($this->year) {
-			case '13':
-				return 2;
-				break;
-			case '12':
-				return 4;
-				break;
-			case '11':
-				return 6;
-				break;
-			case '10':
-				return 8;
-				break;
-			default:
-				return false;
-				break;
+		}else{
+			$this->valid=true;
+			$this->usn=$usn;
+			$this->department=$data->department;
+			$this->sem=$data->semester;
+			$this->sec=$data->section;
+			$this->enabled=($data->enabled=="true")?true:false;
 		}
 	}
 }
