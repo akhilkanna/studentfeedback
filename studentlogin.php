@@ -4,22 +4,29 @@ if(isset($_POST['submit']))
 	if((!isset($_POST['usn'],$_POST['password'])) || $_POST['usn']=='' || $_POST['password']==''){
 		header("location:studentlogin.php?error=emptyFields");
 	}
+	$usn=$_POST['usn'];
+	require_once("required_files/config.php");
 	require_once("classes/info.class.php");
-	$a=new getInfo($_POST['usn']);
-	if(!($a->valid)){
+	$con=mysql_connect($db_host,$db_user,$db_pass);
+	$info=new getInfo($con,$db_name,$usn);
+	if(!($info->valid)){
 		header("location:studentlogin.php?error=usnInvalid");
+		die();
 	}
-	$usn=strtolower($_POST['usn']);
-	$password=strtolower($_POST['password']);
+	if(!($info->enabled)){
+		header("location:studentlogin.php?error=accountDisabled");
+	}
+	$usn=strtoupper($_POST['usn']);
+	$password=strtoupper($_POST['password']);
 	if($usn==$password){
-		setcookie("sem",$_POST['sem'],time()+3600,"/");
-		setcookie("sec",$_POST['sec'],time()+3600,"/");
-		setcookie("usn", $usn, time()+35000, "/");
-		setcookie("department",$_POST['branch'],time()+3600,"/");
 		require_once("required_files/config.php");
 		$usn=mysql_real_escape_string($usn);
 		$con=mysql_connect($db_host,$db_user,$db_pass);
 		$sql="INSERT INTO `$db_name`.`usns` (id,usn) VALUES (NULL,'$usn');";
+		setcookie("usn",$usn,time()+3600,"/");
+		setcookie("department",$info->department,time()+3600,"/");
+		setcookie("sem",$info->sem,time()+3600,"/");
+		setcookie("sec",$info->sec,time()+3600,"/");
 		mysql_query($sql);
 		header("location:feedback.php");
 	}else{
@@ -34,7 +41,7 @@ if(isset($_POST['submit']))
 		?>	
 		<div class="alert alert-danger col-sm-6 col-sm-offset-3" align="center"><?php if($_GET['error']=="emptyFields"){
 			echo "Form was not filled completely!";
-			}elseif($_GET['error']=="usnInvalid"){echo "Usn you entered is invalid!";}elseif($_GET['error']=="loginRequired"){echo "You must login to continue";}else{echo "Username and password mismatch";
+			}elseif($_GET['error']=="usnInvalid"){echo "Usn you entered is invalid!";}elseif($_GET['error']=="loginRequired"){echo "You must login to continue";}else if($_GET['error']=='accountDisabled'){echo "Your account is disabled, please contact system administrator!";}else{echo "Username and password mismatch";
 			} ?>
 		</div>
 		<?php
@@ -44,28 +51,6 @@ if(isset($_POST['submit']))
 				<div class="col-sm-6 col-sm-offset-3">
 				<form action="<?php echo $_SERVER['PHP_SELF']; ?>" method="POST">
 					<p><input type="text" id="usn" name="usn" onchange="setSem()" class="form-control" placeholder="University Seat Number" style="width:400px;"></p><p><input type="password" name="password" style="width:400px;" class="form-control" placeholder="Password"></p>
-					<p>Semester:<select name="sem" id="semester" class="select form-control" style="width:400px;">
-						<option>2</option>
-						<option>4</option>
-						<option>6</option>
-						<option>8</option>
-					</select></p>
-					<p>Section:
-						<select name="sec" id="sec" class="select form-control" style="width:400px;">
-							<option value="A">A</option>
-							<option value="B">B</option>
-						</select>
-					</p>
-					<p>Branch: <input type="hidden" id="hbranch" name="branch" />
-						<select id="dbranch" class="select form-control" disabled style="width:400px;">
-							<option>ISE</option>
-							<option>CSE</option>
-							<option>ECE</option>
-							<option>EEE</option>
-							<option>CIV</option>
-							<option>ME</option>
-						</select>
-					</p>
 					<input type="submit" class="btn btn-default btn-login" value="Log me in!" name="submit">
 				</form>
 				</div>
