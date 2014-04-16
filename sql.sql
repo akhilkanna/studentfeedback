@@ -52,7 +52,7 @@ CREATE TABLE `collegeRating` (
   `parameter` varchar(80) NOT NULL,
   `value` enum('1','2','3','4','5','6') NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=61 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=81 DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -61,7 +61,7 @@ CREATE TABLE `collegeRating` (
 
 LOCK TABLES `collegeRating` WRITE;
 /*!40000 ALTER TABLE `collegeRating` DISABLE KEYS */;
-INSERT INTO `collegeRating` VALUES (51,'ventillation','3'),(52,'powerSupply','4'),(53,'backup','3'),(54,'classroom','4'),(55,'corridors','3'),(56,'toilets','5'),(57,'watersupply','3'),(58,'environment','1'),(59,'medical','2'),(60,'transport','1');
+INSERT INTO `collegeRating` VALUES (61,'ventillation','3'),(62,'powerSupply','4'),(63,'backup','3'),(64,'classroom','4'),(65,'corridors','3'),(66,'toilets','4'),(67,'watersupply','3'),(68,'environment','4'),(69,'medical','3'),(70,'transport','4'),(71,'ventillation','2'),(72,'powerSupply','4'),(73,'backup','2'),(74,'classroom','3'),(75,'corridors','2'),(76,'toilets','3'),(77,'watersupply','2'),(78,'environment','3'),(79,'medical','2'),(80,'transport','3');
 /*!40000 ALTER TABLE `collegeRating` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -103,11 +103,12 @@ DROP TABLE IF EXISTS `feedbackStudents`;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `feedbackStudents` (
   `id` int(5) NOT NULL AUTO_INCREMENT,
-  `usn` varchar(12) NOT NULL,
+  `usn` varchar(50) DEFAULT NULL,
   `message` text,
   PRIMARY KEY (`id`),
-  UNIQUE KEY `usn` (`usn`)
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=latin1;
+  UNIQUE KEY `usn` (`usn`),
+  UNIQUE KEY `usn_2` (`usn`)
+) ENGINE=InnoDB AUTO_INCREMENT=12 DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -116,7 +117,7 @@ CREATE TABLE `feedbackStudents` (
 
 LOCK TABLES `feedbackStudents` WRITE;
 /*!40000 ALTER TABLE `feedbackStudents` DISABLE KEYS */;
-INSERT INTO `feedbackStudents` VALUES (2,'d41d8cd98f00','College is not as good as it claims to be. College doesn\'t have a good environment, there are no any discussions or any of workshop that really want to teach us something. College conducts workshop just to make some money.');
+INSERT INTO `feedbackStudents` VALUES (3,'b33b0271ee22','Honest Feedback 1'),(4,'55fa2f9201fd','Honest Feedback 2'),(5,'55fa2f9','honest feedback3'),(7,'55fa2f9aas','honest feedback3'),(9,'55fa2f9aaIs','honest feedback7'),(10,'55fa2f9aaI5s','honest feedback5'),(11,'b33b0271ee22816ae0e65150053526ee','honest feedback');
 /*!40000 ALTER TABLE `feedbackStudents` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -135,7 +136,7 @@ CREATE TABLE `teacherRating` (
   PRIMARY KEY (`id`),
   KEY `teacher` (`teacher`),
   CONSTRAINT `teacherRating_ibfk_1` FOREIGN KEY (`teacher`) REFERENCES `faculty` (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=211 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=291 DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -144,7 +145,7 @@ CREATE TABLE `teacherRating` (
 
 LOCK TABLES `teacherRating` WRITE;
 /*!40000 ALTER TABLE `teacherRating` DISABLE KEYS */;
-INSERT INTO `teacherRating` VALUES (171,24,'cos','4'),(172,28,'cos','4'),(173,32,'cos','4'),(174,46,'cos','4'),(175,47,'cos','4'),(176,51,'cos','4'),(177,52,'cos','4'),(178,53,'cos','5'),(179,24,'tc','5'),(180,28,'tc','5'),(181,32,'tc','5'),(182,46,'tc','5'),(183,47,'tc','4'),(184,51,'tc','3'),(185,52,'tc','5'),(186,53,'tc','2'),(187,24,'qps','4'),(188,28,'qps','4'),(189,32,'qps','4'),(190,46,'qps','3'),(191,47,'qps','4'),(192,51,'qps','5'),(193,52,'qps','4'),(194,53,'qps','3'),(195,24,'sspe','3'),(196,28,'sspe','3'),(197,32,'sspe','3'),(198,46,'sspe','5'),(199,47,'sspe','5'),(200,51,'sspe','4'),(201,52,'sspe','3'),(202,53,'sspe','1'),(203,24,'caws','4'),(204,28,'caws','5'),(205,32,'caws','4'),(206,46,'caws','3'),(207,47,'caws','3'),(208,51,'caws','5'),(209,52,'caws','3'),(210,53,'caws','3');
+INSERT INTO `teacherRating` VALUES (211,24,'cos','3'),(212,28,'cos','2'),(213,32,'cos','3'),(214,46,'cos','2'),(215,47,'cos','1'),(216,51,'cos','1'),(217,52,'cos','1'),(218,53,'cos','1'),(219,24,'tc','4'),(220,28,'tc','3'),(221,32,'tc','3'),(222,46,'tc','3'),(223,47,'tc','2'),(224,51,'tc','2'),(225,52,'tc','2'),(226,53,'tc','3'),(227,24,'qps','3'),(228,28,'qps','4'),(229,32,'qps','4'),(230,46,'qps','4'),(231,47,'qps','3'),(232,51,'qps','3'),(233,52,'qps','1'),(234,53,'qps','4'),(235,24,'sspe','4'),(236,28,'sspe','5'),(237,32,'sspe','3'),(238,46,'sspe','5'),(239,47,'sspe','4'),(240,51,'sspe','4'),(241,52,'sspe','3'),(242,53,'sspe','3'),(243,24,'caws','3'),(244,28,'caws','2'),(245,32,'caws','4'),(246,46,'caws','4'),(247,47,'caws','5'),(248,51,'caws','5'),(249,52,'caws','2'),(250,53,'caws','4'),(251,24,'cos','3'),(252,28,'cos','3'),(253,32,'cos','1'),(254,46,'cos','1'),(255,47,'cos','1'),(256,51,'cos','3'),(257,52,'cos','1'),(258,53,'cos','3'),(259,24,'tc','4'),(260,28,'tc','4'),(261,32,'tc','3'),(262,46,'tc','2'),(263,47,'tc','2'),(264,51,'tc','4'),(265,52,'tc','4'),(266,53,'tc','4'),(267,24,'qps','5'),(268,28,'qps','3'),(269,32,'qps','4'),(270,46,'qps','3'),(271,47,'qps','3'),(272,51,'qps','4'),(273,52,'qps','3'),(274,53,'qps','5'),(275,24,'sspe','3'),(276,28,'sspe','4'),(277,32,'sspe','3'),(278,46,'sspe','4'),(279,47,'sspe','4'),(280,51,'sspe','4'),(281,52,'sspe','2'),(282,53,'sspe','3'),(283,24,'caws','4'),(284,28,'caws','5'),(285,32,'caws','4'),(286,46,'caws','5'),(287,47,'caws','5'),(288,51,'caws','5'),(289,52,'caws','3'),(290,53,'caws','2');
 /*!40000 ALTER TABLE `teacherRating` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -161,7 +162,7 @@ CREATE TABLE `tracker` (
   `formSub` enum('a','b','c') NOT NULL,
   PRIMARY KEY (`id`),
   UNIQUE KEY `usn` (`usn`)
-) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -170,7 +171,7 @@ CREATE TABLE `tracker` (
 
 LOCK TABLES `tracker` WRITE;
 /*!40000 ALTER TABLE `tracker` DISABLE KEYS */;
-INSERT INTO `tracker` VALUES (3,'1ve12is025','c');
+INSERT INTO `tracker` VALUES (4,'1ve12is025','c'),(5,'1ve12is024','c');
 /*!40000 ALTER TABLE `tracker` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -186,7 +187,7 @@ CREATE TABLE `usns` (
   `usn` varchar(12) DEFAULT NULL,
   PRIMARY KEY (`id`),
   UNIQUE KEY `usn` (`usn`)
-) ENGINE=InnoDB AUTO_INCREMENT=16 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=17 DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -195,7 +196,7 @@ CREATE TABLE `usns` (
 
 LOCK TABLES `usns` WRITE;
 /*!40000 ALTER TABLE `usns` DISABLE KEYS */;
-INSERT INTO `usns` VALUES (15,'1ve12is025');
+INSERT INTO `usns` VALUES (16,'1ve12is024');
 /*!40000 ALTER TABLE `usns` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -208,4 +209,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2014-04-15 11:05:40
+-- Dump completed on 2014-04-16  7:33:08
