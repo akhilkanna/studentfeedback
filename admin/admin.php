@@ -17,7 +17,7 @@
 	header("location:/admin");
 }
 ?>
-<?php $title="Login Admin"; require_once('../required_files/header.php'); ?>
+<?php $title="Report"; require_once('../required_files/header.php'); ?>
 	<div align="center">
 		<a href="admin.php" >Part A</a> | <a href="collegeResult.php" >Part B</a> | <a href="studentfeedbacks.php">Student's Comments</a>
 	</div>
