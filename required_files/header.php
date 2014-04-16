@@ -17,7 +17,7 @@
 			<li><a href="/index.php" class="home">Home</a></li>
 			<li><a href="/about.php" class="about">About Feedback</a></li>
 			<li><a href="/adminlogin.php" class="admin">Admin</a></li>
-			<li><a href="/studentlogin.php" class="login">Login</a></li>
+			<li><a href="/studentlogin.php" class="login">Student</a></li>
 			<li><a href="/admin/" class="result">Results</a></li>
 			<li><a href="https://www.github.com/cyberhck/studentfeedback" class="source">Source on Github</a></li>
 		</ul>
