@@ -6,7 +6,7 @@ if(isset($_COOKIE['usn'])){
 }
 if(isset($_COOKIE['password'])){
 	setcookie("password","",time()-3600);
-	header("location:adminlogin.php");
+	header("location:about.php");
 	die();
 }
 ?>
