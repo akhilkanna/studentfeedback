@@ -37,14 +37,19 @@ if(isset($_POST['submit'])){
 ?>
 <?php require_once("required_files/header.php"); ?>
 <div class="container">
-	<p class="text-info">Time to be honest, What do you think this college should improve? If there any suggestions then please let us know, we (developers of this form) assure you that your privacy won't be compromised. We won't display your information to anyone.</p>
-	<p class="lead text-info">Feel free to post honest feedback but don't use a hate speech. We (developers) respect your privacy unless you use hate speech.</p>
-	<form action="<?php echo $_SERVER['PHP_SELF']; ?>" method="post">
-		<textarea name="feedback" class="form-control" style="margin-bottom:20px;" placeholder="Enter your message here." id="textarea" cols="90" rows="10"></textarea>
-		<p>
-			<input type="submit" name="submit" class="btn btn-primary btn-login" value="Share the Feed">
-		</p>
-	</form>
+	<div class="row" style="margin-top:35px;">
+		<div class="col-sm-7">
+			<form action="<?php echo $_SERVER['PHP_SELF']; ?>" method="post">
+				<textarea name="feedback" class="form-control" style="margin-bottom:20px;" placeholder="Enter your message here." id="textarea" cols="90" rows="10"></textarea>
+					<p>
+						<input type="submit" name="submit" class="btn btn-primary btn-login" value="Share the Feed">
+					</p>
+			</form>
+		</div>
+		<div class="col-sm-5"><p class="" style="font-family:acme; font-size:18px;">Time to be honest, What do you think this college should improve? If there any suggestions then please let us know, we (developers of this form) assure you that your privacy won't be compromised. We won't display your information to anyone.</p>
+			<p class="lead" style=""><strong>Feel free to post. But don't use a hate speech. We (developers) respect your privacy unless you use hate speech.</strong></p>
+		</div>
+	</div>
 </div>
 
 <?php require_once("required_files/footer.php"); ?>
