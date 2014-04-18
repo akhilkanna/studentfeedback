@@ -29,9 +29,6 @@
 			case 'caws':
 				return 'Counselling Acedemically Weak Students';
 				break;
-
-
-
 			default:
 				break;
 		}
@@ -50,12 +47,19 @@
 	$faculty_name=$faculty_name->name;
 	$sql="SELECT SUM(value) AS total,parameter,count(parameter) AS count FROM `$db_name`.`faculty`,`$db_name`.`teacherRating` WHERE department = '$dept' AND semester = '$sem' AND teacherRating.teacher=faculty.id AND `faculty`.`id`='$teacher' GROUP BY parameter;";
 	$query=mysql_query($sql)or die();
-	$html="<table class='table'>";
-	$html=$html."<tr><th colspan='4'>$faculty_name</th></tr>";
-	$html=$html."<tr><th>Parameter</th><th>Secured Score</th><th>Total</th><th>Percentage</th></tr>";
+	$html="<table class='table' style='font-family:acme; font-size:16px;'>";
+	$html=$html."<tr><td colspan='4'>$faculty_name</td></tr>";
+	$html=$html."<tr><td>Parameter</td><td>Secured Score</td><td>Total</td><td>Percentage</td></tr>";
+	$count=0;
+	$sum=0;
 	while($data=mysql_fetch_object($query)){
-		$html=$html."<tr><th>".getFullParameter($data->parameter)."</th><td>".$data->total."</td><td>".(($data->count)*5)."</td><td>".floor((($data->total)/($data->count*5))*100)."</td></tr>";
+		$value=floor((($data->total)/($data->count*5))*100);
+		$html=$html."<tr><td>".getFullParameter($data->parameter)."</td><td>".$data->total."</td><td>".(($data->count)*5)."</td><td>".$value."</td></tr>";
+		$count++;
+		$sum+=$value;
 	}
+	$overall=$sum/$count;
+	$html=$html."<tr><td></td><td></td><td>Net Total</td><td>$overall</td></tr>";
 	$html=$html."</table>";
 	echo $html;
 ?>
