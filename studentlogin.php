@@ -15,6 +15,7 @@ if(isset($_POST['submit']))
 	}
 	if(!($info->enabled)){
 		header("location:studentlogin.php?error=accountDisabled");
+		die();
 	}
 	$usn=strtoupper($_POST['usn']);
 	$password=strtoupper($_POST['password']);

@@ -48,8 +48,8 @@
 	$sql="SELECT SUM(value) AS total,parameter,count(parameter) AS count FROM `$db_name`.`faculty`,`$db_name`.`teacherRating` WHERE department = '$dept' AND semester = '$sem' AND teacherRating.teacher=faculty.id AND `faculty`.`id`='$teacher' GROUP BY parameter;";
 	$query=mysql_query($sql)or die();
 	$html="<table class='table' style='font-family:acme; font-size:16px;'>";
-	$html=$html."<tr><td colspan='4'>$faculty_name</td></tr>";
-	$html=$html."<tr><td>Parameter</td><td>Secured Score</td><td>Total</td><td>Percentage</td></tr>";
+	$html=$html."<tr><td style='font-size:20px;' colspan='4' class='text-warning'>$faculty_name</td></tr>";
+	$html=$html."<tr><td>Parameter</td><td>Score</td><td>Total</td><td>Percentage</td></tr>";
 	$count=0;
 	$sum=0;
 	while($data=mysql_fetch_object($query)){
