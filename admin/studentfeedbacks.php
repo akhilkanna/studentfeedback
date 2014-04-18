@@ -25,13 +25,13 @@
 		<div class="row">
 			<div class="col-sm-10 col-sm-offset-1">
 			<form action="<?php echo $_SERVER['PHP_SELF']; ?>" onchange="this.submit()" method="get">
-			Show<select style="margin-bottom:20px;" name="limit" id="">
-					<option value="<?php $limit=(isset($_GET['limit']))?$_GET['limit']:20;echo $limit; ?>"><?php echo $limit; ?></option>
-					<option value="5">5</option>
-					<option value="10">10</option>
-					<option value="15">15</option>
-					<option value="20">20</option>
-					<option value="50">50</option>
+			Show <select style="margin-bottom:20px;" name="limit" id="">
+					<?php $limit=(isset($_GET['limit']))?$_GET['limit']:20;?>
+					<option value="5" <?php if ($limit==5) {echo "selected";} ?>>5</option>
+					<option value="10" <?php if ($limit==10) {echo "selected";} ?>>10</option>
+					<option value="15" <?php if ($limit==15) {echo "selected";} ?>>15</option>
+					<option value="20" <?php if ($limit==20) {echo "selected";} ?>>20</option>
+					<option value="50" <?php if ($limit==50) {echo "selected";} ?>>50</option>
 				</select> Comments Per Page
 			</form>
 				<?php 
@@ -45,7 +45,7 @@
 						echo "<h3>Comment ID : ".$data->id."</h3><p>".$data->message."</p>";
 					}
 				 ?>
-				 <div class="row"><a href="<?php $newoffset=$offset-$limit;echo $_SERVER['PHP_SELF']."?limit=$limit&offset=$newoffset"; ?>" class="badge btn btn-info">&lt;&lt; Prev</a><a href="<?php $newoffset=$offset+$limit; echo $_SERVER['PHP_SELF']."?limit=$limit&offset=$newoffset"; ?>" class="badge btn btn-info pull-right">Next &gt;&gt;</a></div>
+				 <div class="row"><a href="<?php $newoffset=$offset-$limit;echo $_SERVER['PHP_SELF']."?limit=$limit&offset=$newoffset"; ?>" class="badge <?php if($newoffset<0){echo "disabled";} ?> btn btn-info">&lt;&lt; Prev</a><a href="<?php $newoffset=$offset+$limit; echo $_SERVER['PHP_SELF']."?limit=$limit&offset=$newoffset"; ?>" class="badge btn btn-info pull-right">Next &gt;&gt;</a></div>
 				
 
 
