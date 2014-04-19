@@ -36,27 +36,29 @@ if(isset($_POST['submit'])){
 		die();
 	}
 	$connection=mysql_connect($db_host,$db_user,$db_pass);
+	$sql="INSERT INTO `$db_name`.`teacherRating` (id,teacher,parameter,value) VALUES";
+	$values="";
 	foreach ($cos as $key=>$value) {
-		$sql1="INSERT INTO `$db_name`.`teacherRating` (id,teacher,parameter,value) VALUES(NULL,'$key','cos','$value');";
-		mysql_query($sql1) or die(mysql_error());
+		$values=$values."(NULL,'$key','cos','$value')";
 	}
 	foreach ($tc as $key=>$value) {
-		$sql2="INSERT INTO `$db_name`.`teacherRating` (id,teacher,parameter,value) VALUES(NULL,'$key','tc','$value');";
-		mysql_query($sql2) or die(mysql_error());
+		$values=$values."(NULL,'$key','tc','$value')";
 	}
 	foreach ($qps as $key=>$value) {
-		$sql3="INSERT INTO `$db_name`.`teacherRating` (id,teacher,parameter,value) VALUES(NULL,'$key','qps','$value');";
-		mysql_query($sql3) or die(mysql_error());
+		$values=$values."(NULL,'$key','qps','$value')";
 	}
 	foreach ($sspe as $key=>$value) {
-		$sql4="INSERT INTO `$db_name`.`teacherRating` (id,teacher,parameter,value) VALUES(NULL,'$key','sspe','$value');";
-		mysql_query($sql4) or die(mysql_error());
+		$values=$values."(NULL,'$key','sspe','$value')";
 	}
 	foreach ($caws as $key=>$value) {
-		$sql5="INSERT INTO `$db_name`.`teacherRating` (id,teacher,parameter,value) VALUES(NULL,'$key','caws','$value');";
-		mysql_query($sql5) or die(mysql_error());
+		$values=$values."(NULL,'$key','caws','$value')";
 	}
-		mysql_query("INSERT INTO `$db_name`.`tracker` (id,usn,formSub) VALUES (NULL,'$usn','a');")or die(mysql_error());
+	$values=str_replace(")(", "),(", $values);
+	$sql=$sql.$values;
+	mysql_query($sql);
+	var_dump($sql);
+	die();
+	mysql_query("INSERT INTO `$db_name`.`tracker` (id,usn,formSub) VALUES (NULL,'$usn','a');")or die(mysql_error());
 	header("location:feedback2.php");
 }else{
 $sql="SELECT `id`,`subName` FROM `$db_name`.`faculty` WHERE `semester`='$sem' AND `sec`='$sec' AND `department`='$department'";
@@ -98,9 +100,10 @@ $(document).ready(function() {
 	$.each($('.score'), function(index, val) {
 		$this=$(this);
 		name=$this.data('name');
-		$this.raty({scoreName:name,hints:['poor','satisfactory','good','very good','excellent']});
+		$this.raty({scoreName:name,hints:['poor','satisfactory','good','very good','excellent'],size:24});
 	});
 	$(".score img").tooltip();
+	$("td div img").css("width","20px").css("height","20px").parent().css("width","120px")
 });
 
 </script>

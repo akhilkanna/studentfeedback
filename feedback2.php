@@ -78,9 +78,11 @@ $(document).ready(function() {
 	$.each($('.score'), function(index, val) {
 		$this=$(this);
 		name=$this.data('name');
-		$this.raty({scoreName:name,hints:['poor','satisfactory','good','very good','excellent']});
+		$this.raty({scoreName:name,
+			hints:['poor','satisfactory','good','very good','excellent']});
 	});
 	$(".score img").tooltip();
+	$("td div img").css("width","20px").css("height","20px").parent().css("width","120px")
 });
 </script>
 <?php require_once("required_files/footer.php"); ?>
