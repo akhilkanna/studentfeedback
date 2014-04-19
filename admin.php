@@ -35,7 +35,7 @@
 				echo "<p class='text-danger'>No faculty added. Try adding some.</p>";
 			}else{
 		?>
-		<div><a href="changePasswd.php">Change Password</a> | <a href="addAdmin.php">Add Admin</a> | <a href="logout.php">Logout</a></div>
+		<div><a href="changePasswd.php">Change Password</a> | <a href="addAdmin.php">Add Admin</a> | <a href="edclass.php">Enable / Disable Group</a> | <a href="logout.php">Logout</a></div>
 		<table class="table">
 			<tr><th>Name</th> <th>Subject Code</th> <th>Subject Name</th> <th>Semester</th> <th>Section</th> <th>Department</th><th></th> </tr>
 			<?php while($data=mysql_fetch_object($query)){

@@ -69,3 +69,24 @@
 				
 			}
 		});
+		function degroup (e) {
+			check=e.checked;
+			value=e.value;
+			$.ajax({
+				url: 'ajax/edclass.php',
+				type: 'POST',
+				dataType: 'text',
+				data: {enable: check,values:value},
+			})
+			.done(function(e) {
+				if(e=="success"){
+
+				}else{
+					alert("There was an error disabling that group please refresh the page then try again");
+					console.log(e);
+				}
+			})
+			.fail(function(e) {
+				console.log("error");
+			});			
+		}
