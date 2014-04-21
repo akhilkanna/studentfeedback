@@ -56,8 +56,6 @@ if(isset($_POST['submit'])){
 	$values=str_replace(")(", "),(", $values);
 	$sql=$sql.$values;
 	mysql_query($sql);
-	var_dump($sql);
-	die();
 	mysql_query("INSERT INTO `$db_name`.`tracker` (id,usn,formSub) VALUES (NULL,'$usn','a');")or die(mysql_error());
 	header("location:feedback2.php");
 }else{
@@ -65,6 +63,18 @@ $sql="SELECT `id`,`subName` FROM `$db_name`.`faculty` WHERE `semester`='$sem' AN
 $query=mysql_query($sql)or die(mysql_error());
 ?>
 <?php $title="Feedback Form 1"; require_once("required_files/header.php"); ?>
+	<div class="container">
+		<div class="pull-right">
+			Welcome, <?php $usn=mysql_real_escape_string($_COOKIE['usn']);echo $usn;
+				$sql1="SELECT * FROM `$db_name`.`students` WHERE usn='$usn';";
+				$con=mysql_connect($db_host,$db_user,$db_pass);
+				$query1=mysql_query($sql1);
+				$data=mysql_fetch_object($query1);
+				echo "<br>".$data->name;
+				echo "<br>".$data->department."<br>";
+			?>
+		</div>
+	</div>
 <a href="logout.php" class="col-sm-offset-1 btn btn-warning" style="margin-bottom:20px;">Logout</a>
 <?php while ($data=mysql_fetch_object($query)) {
 	$listIDs[]=$data->id;
