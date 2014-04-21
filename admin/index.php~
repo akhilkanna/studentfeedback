@@ -42,7 +42,7 @@ if(isset($_POST['submit']))
 		setcookie("password",$passdb,time()+3600,"/");
 		header("location:admin.php");
 	}else{
-		header("location:/adminlogin.php?error=passwordMismatch");
+		header("location:adminlogin.php?error=passwordMismatch");
 	}
 
 }else{
