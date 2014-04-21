@@ -1,5 +1,6 @@
 <?php
 	require_once("../required_files/config.php");
+	$con=mysql_connect($db_host,$db_user,$db_pass);
 	$check=$_POST['enable'];
 	$value=$_POST['values'];
 	$values=explode("&", $value);

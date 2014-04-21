@@ -80,7 +80,7 @@
 			})
 			.done(function(e) {
 				if(e=="success"){
-
+					console.log(e);
 				}else{
 					alert("There was an error disabling that group please refresh the page then try again");
 					console.log(e);
