@@ -19,7 +19,7 @@
 ?>
 <?php $title="Login Admin"; require_once('../required_files/header.php'); ?>
 	<div align="center">
-		<a href="admin.php" >Part A</a> | <a href="collegeResult.php" >Part B</a> | <a href="studentfeedbacks.php">Student's Comments</a> | <a href="report.php">Report</a> | <a href="getreport.php" >ref</a>
+		<a href="admin.php" >Part A</a> | <a href="collegeResult.php" >Part B</a> | <a href="studentfeedbacks.php">Student's Comments</a>
 	</div>
 	<div class="jumbotron">
 		<div class="row">
