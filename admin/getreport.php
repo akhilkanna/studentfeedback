@@ -33,6 +33,7 @@
 					<option value="ece">ECE</option>
 					<option value="civ">CV</option>
 					<option value="me">ME</option>
+					<option value="bs">BS</option>
 				</select>
 				<p>
 					<select name="sem" class="form-control" style="width:300px;">
@@ -45,6 +46,11 @@
 					<select name="section" class="form-control" style="width:300px;">
 						<option value="A">A</option>
 						<option value="B">B</option>
+						<option value="C">C</option>
+						<option value="D">D</option>
+						<option value="E">E</option>
+						<option value="F">F</option>
+						<option value="G">G</option>
 					</select>
 				<p><input name="submit" type="submit" onclick="myFunc();" class="btn btn-login" value="View those!"></p>
 		</form>

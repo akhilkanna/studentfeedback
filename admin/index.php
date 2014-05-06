@@ -20,7 +20,6 @@ if(isset($_POST['submit']))
 	if((!isset($_POST['username'],$_POST['password'])) || $_POST['username']=='' || $_POST['password']==''){
 		header("location:index.php?error=emptyFields");
 	}
-	//login logic.
 	$username=$_POST['username'];
 	$password=$_POST['password'];
 	require_once("../required_files/config.php");
