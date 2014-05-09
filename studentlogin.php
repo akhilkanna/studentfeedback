@@ -58,46 +58,6 @@ if(isset($_POST['submit']))
 			</div>
 		</form>
 	</div>
-	<script>
-	function setSem () {
-		setBranch();
-		$.ajax({
-			url: 'ajax/getSem.php',
-			type: 'GET',
-			dataType: 'text',
-			data: {usn: $("#usn")[0].value},
-		})
-		.done(function(e) {
-			if(e!="fail"){
-				$("#semester")[0].value=e;
-			}else{
-				return 0;
-			}
-		})
-		.fail(function() {
-			console.log("error");
-		});
-		
-	}
-		function setBranch () {
-		$.ajax({
-			url: 'ajax/getBranch.php',
-			type: 'GET',
-			dataType: 'text',
-			data: {usn: $("#usn")[0].value},
-		})
-		.done(function(e) {
-			if(e!="fail"){
-				$("#dbranch")[0].value=e;
-				$("#hbranch")[0].value=e;
-				console.log($("#hbranch")[0].value);
-			}else{
-				return 0;
-			}
-		});
-		
-	}
-	</script>
 <?php require_once('required_files/footer.php'); ?>
 <?php
 }
