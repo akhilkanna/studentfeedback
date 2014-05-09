@@ -42,7 +42,7 @@
 					$sql="SELECT id,message FROM `$db_name`.`feedbackStudents` WHERE message != '' LIMIT $limit OFFSET $offset";
 					$query=mysql_query($sql);
 					while ($data=mysql_fetch_object($query)) {
-						echo "<h3>Comment ID : ".$data->id."</h3><span style='font-family:acme;'>".htmlentities($data->message)."</span>";
+						echo "<h5 class='text-muted' style='font-family:acme;'>Comment ID : ".$data->id."</h5><span style='font-family:sintony;'>".nl2br(htmlentities($data->message))."</span><hr>";
 					}
 				 ?>
 				 <div class="row"><a href="<?php $newoffset=$offset-$limit;echo $_SERVER['PHP_SELF']."?limit=$limit&offset=$newoffset"; ?>" class="badge <?php if($newoffset<0){echo "disabled";} ?> btn btn-info">&lt;&lt; Prev</a><a href="<?php $newoffset=$offset+$limit; echo $_SERVER['PHP_SELF']."?limit=$limit&offset=$newoffset"; ?>" class="badge btn btn-info pull-right">Next &gt;&gt;</a></div>
