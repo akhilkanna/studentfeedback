@@ -44,11 +44,13 @@
 	$teacher=(isset($_GET['faculty']))?mysql_real_escape_string($_GET['faculty']):"";
 	$con=mysql_connect($db_host,$db_user,$db_pass)or die(mysql_error());
 	$faculty_name=mysql_fetch_object(mysql_query("SELECT `name`,`subName` FROM `$db_name`.`faculty` WHERE id='$teacher';"))or die("<div class='alert alert-danger text-center'><strong>Seems like this department doesn't contain this section!</strong></div>");
+	$faculty=$faculty_name;
 	$faculty_name=$faculty_name->name;
 	$sql="SELECT SUM(value) AS total,parameter,count(parameter) AS count FROM `$db_name`.`faculty`,`$db_name`.`teacherRating` WHERE department = '$dept' AND semester = '$sem' AND teacherRating.teacher=faculty.id AND `faculty`.`id`='$teacher' GROUP BY parameter;";
 	$query=mysql_query($sql)or die();
+	$subject=$faculty->subName;
+	echo $subject;	
 	$html="<table class='table' style='font-family:acme; font-size:16px;'>";
-	$subject=$faculty_name->subName;
 	$html=$html."<tr><td style='font-size:20px;' colspan='4' class='text-warning'>$faculty_name</td></tr>";
 	$html=$html."<tr><td>Parameter</td><td>Score</td><td>Total</td><td>Percentage</td></tr>";
 	$count=0;
