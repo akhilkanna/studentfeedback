@@ -56,11 +56,4 @@
 		</form>
 		</div>
 	</div>
-	<script>
-	function myFunc () {
-//		data=$("#myForm").serialize();
-//		url="/admin/report.php?"+data;
-//		window.location=url;
-	}
-	</script>
 <?php require_once('../required_files/footer.php'); ?>
