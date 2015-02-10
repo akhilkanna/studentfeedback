@@ -80,7 +80,7 @@ $query=mysql_query($sql)or die(mysql_error());
 	$listIDs[]=$data->id;
 	$listSubName[]=$data->subName;
 }
-$parameters=array("cos"=>"Coverage of Syllabus","tc"=>"Tutorials Conducted","qps"=>"Old Question Papper Solved","sspe"=>"Student Seminars Presentation Encouraged","caws"=>"Counselling Acedemically Weak Students");
+$parameters=array("cos"=>"Handwriting &amp; Usage of board","tc"=>"Interest shown by teacher in subject and body language","qps"=>"Technical knowledge with` coverage of syllabus","sspe"=>"Ability of teacher for clarification and discussion","caws"=>"Planning and time management");
 $row="<tr><th>Parameters</th><th>";
 $data=implode("</th><th>",$listSubName);
 $row=$row.$data."</th></tr>";

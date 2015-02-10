@@ -16,7 +16,7 @@
 											<small>Passionate Web Developer</small><br>
 											Enthusiastic Entrepreneur<br>
 										</div>
-										<blockquote class="blockquote blockquote-reverse"><p class="text-center" style="font-family:acme; text-transform:capitalize;">"If you control the code, you control the world"</p></blockquote><br><br>
+										<blockquote class="blockquote blockquote-reverse"><p class="text-center" style="font-family:acme; text-transform:capitalize;">"Let's make earth a better place to live in, lets save environment and use online forms"</p></blockquote><br><br>
 										<span class="small">connect with me : </span><br>
 										<br><a href="https://www.facebook.com/cyberkiller.nishchal" target="_blank"><img class="social" src="img/facebook.ico" alt=""></a>
 									    <a href="https://plus.google.com/+NishchalGautam " target="_blank"><img class="social" src="img/google.ico" alt=""></a>

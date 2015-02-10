@@ -40,11 +40,11 @@
 					<th>Department</th>
 					<th>Semester</th>
 					<th>Section</th>
-					<th>Coverage of Syllabus in %</th>
-					<th>Tutorials Conducted in %</th>
-					<th>Old Question Papper Solved in %</th>
-					<th>Student Seminar Presentation Encouraged in %</th>
-					<th>Counselling Acedemically Weak Students in %</th>
+					<th>Handwriting &amp; Usage of board</th>
+					<th>Interest shown by teacher in subject and body language</th>
+					<th>Technical knowledge with coverage of syllabus</th>
+					<th>Ability of teacher for clarification and discussion</th>
+					<th>Planning and time management</th>
 					<th>Overall Percentage</th>
 				</tr>
 				<?php
