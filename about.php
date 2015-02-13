@@ -16,12 +16,12 @@
 											<small>Passionate Web Developer</small><br>
 											Enthusiastic Entrepreneur<br>
 										</div>
-										<blockquote class="blockquote blockquote-reverse"><p class="text-center" style="font-family:acme; text-transform:capitalize;">"Let's make earth a better place to live in, lets save environment and use online forms"</p></blockquote><br><br>
+										<blockquote class="blockquote blockquote-reverse"><p class="text-center" style="font-family:acme; text-transform:capitalize;">"Eat Sleep Code, my one and only motto of life."</p></blockquote><br><br>
 										<span class="small">connect with me : </span><br>
-										<br><a href="https://www.facebook.com/cyberkiller.nishchal" target="_blank"><img class="social" src="img/facebook.ico" alt=""></a>
+										<br>
 									    <a href="https://plus.google.com/+NishchalGautam " target="_blank"><img class="social" src="img/google.ico" alt=""></a>
 									    <a href="https://www.twitter.com/nishchal_619 " target="_blank"><img class="social" src="img/twitter.ico" alt=""></a>
-									    <a href="skype:nishchal.gautam?call" target="_blank"><img class="social" src="img/skype.ico" alt=""></a>
+									    
 									</div>
 									<div class="col-sm-6"><img class="img-circle pull-right" style="height:150px;width:150px;" src="img/nishchal.jpg" /></div>
 								</div>

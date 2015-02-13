@@ -59,9 +59,9 @@
 					$con=mysql_connect($db_host,$db_user,$db_pass);
 					$query=mysql_query($sql) or die(mysql_error());
 					while($data=mysql_fetch_object($query)){
-						$html="<tr><td>".$data->name."</td><td>".$data->subName."</td><td>".$data->department."</td><td>".$data->semester."</td><td>".$data->sec."</td>";
+						$html="<tr><td>".$data->name."</td><td>".$data->subName."</td><td>".$data->department."</td><td>".($data->semester+1)."</td><td>".$data->sec."</td>";
 						$htmlclean=$html;
-						$sql1="SELECT SUM(value) AS total,faculty.department,faculty.sec,faculty.semester,parameter,count(parameter)*5 AS count FROM `$db_name`.`faculty`,`$db_name`.`teacherRating` WHERE teacherRating.teacher=faculty.id AND `faculty`.`id`='$data->id' GROUP BY parameter;";
+						$sql1="SELECT SUM(value) AS total,faculty.department,faculty.sec,(faculty.semester),parameter,count(parameter)*5 AS count FROM `$db_name`.`faculty`,`$db_name`.`teacherRating` WHERE teacherRating.teacher=faculty.id AND `faculty`.`id`='$data->id' GROUP BY parameter;";
 						$query1=mysql_query($sql1)or die(mysql_error());
 						$overall=0;
 						while ($data1=mysql_fetch_object($query1)) {
