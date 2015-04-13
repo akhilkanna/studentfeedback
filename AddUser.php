@@ -20,8 +20,7 @@
 	<div class="container">
 		<?php 
 	$form = '<tr><td><input type="text" id="name" name="name" class="form-control" style="width:250px;"></td>
-	<td><input type="text" name="subCode" class="form-control" style="width:150px;"></td>
-	<td><input type="text" name="subName" class="form-control" style="width:150px;"></td>
+	<td><input type="text" name="usn" class="form-control" style="width:150px;"></td>
 	<td><input type="text" name="sem" class="form-control" style="width:150px;"></td>
 	<td><input type="text" name="section" class="form-control" style="width:150px;"></td>
 	<td><input type="text" name="department" class="form-control" style="width:150px;"></td>
@@ -29,18 +28,18 @@
 	 ?>
 		<?php
 			$connection=mysql_connect($db_host,$db_user,$db_pass);
-			$sql="SELECT * FROM `$db_name`.`faculty`";
+			$sql="SELECT * FROM `$db_name`.`students`";
 			$query=mysql_query($sql,$connection);
 			if(mysql_num_rows($query)==0){
-				echo "<p class='text-danger'>No faculty added. Try adding some.</p>";
+				echo "<p class='text-danger'>No students added. Try adding some.</p>";
 			}else{
 		?>
-		<div><a href="changePasswd.php">Change Password</a> | <a href="addAdmin.php">Add Admin</a> | <a href="edclass.php">Enable / Disable Group</a> | <a href="logout.php">Logout</a> | <a href="AddUser.php">Add Students</a></div>
+		<div><a href="changePasswd.php">Change Password</a> | <a href="addAdmin.php">Add Admin</a> | <a href="edclass.php">Enable / Disable Group</a> | <a href="logout.php">Logout</a> | <a href="AddUser.php"></a></div>
 		<table class="table">
-			<tr><th>Name</th> <th>Subject Code</th> <th>Subject Name</th> <th>Semester</th> <th>Section</th> <th>Department</th><th></th> </tr>
+			<tr><th>Name</th> <th>USN</th> <th>Semester</th> <th>Section</th> <th>Department</th><th></th> </tr>
 			<?php while($data=mysql_fetch_object($query)){
 			?>
-			<tr><td><?php echo $data->name;?></td><td><?php echo $data->subCode; ?></td> <td><?php echo $data->subName; ?></td> <td><?php echo $data->semester; ?></td> <td><?php echo $data->sec; ?></td> <td><?php echo $data->department; ?></td> <td><span style="cursor:pointer;" data-id="<?php echo $data->id; ?>" class="glyphicon glyphicon-trash text-info delete"> Delete</span></td></tr>
+			<tr><td><?php echo $data->name;?></td><td><?php echo $data->usn; ?></td><td><?php echo $data->semester; ?></td> <td><?php echo $data->section; ?></td> <td><?php echo $data->department; ?></td> <td><span style="cursor:pointer;" data-id="<?php echo $data->id; ?>" class="glyphicon glyphicon-trash text-info delete"> Delete</span></td></tr>
 			<?php
 				}
 			?>
@@ -49,14 +48,14 @@
 				}
 			 ?>
 			 <table class="table">
-			 	<tr><th>Name</th> <th>Subject Code</th> <th>Subject Name</th> <th>Semester</th> <th>Section</th> <th>Department</th><th></th> </tr>
+			 	<tr><th>Name</th><td>USN</td><th>Semester</th> <th>Section</th> <th>Department</th><th></th> </tr>
 			 	<form action="ajax/addmember.php" id="membershipForm" method="post">
 					<?php echo $form; ?>
 				</form>
 			 </table>
 
 	</div>
-	<script type="text/javascript" language="javascript" src="admin.js"></script>
+	<script type="text/javascript" language="javascript" src="user.js"></script>
 	<?php require_once("required_files/footer.php"); ?>
 	<?php
 	}
