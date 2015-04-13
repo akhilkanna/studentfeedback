@@ -45,7 +45,7 @@
 			$data=$this.data("id");
 			if(confirm("This might hurt, Don't say we didn't warn you. And Deleting Can't be undone")){
 				$.ajax({
-					url: 'ajax/deleteMember.php',
+					url: 'ajax/deleteUser.php',
 					type: 'POST',
 					dataType: 'text',
 					data: {id: $data},
