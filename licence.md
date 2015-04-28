@@ -1,3 +1,10 @@
+## This product uses a dual licence, DBAD and my custom licence
+
+This product can only be used for commercial purposes only with my permission and if it's commercial, you need to include a GPG signed copy of the permission message that I provide.
+
+You can't sell this product to any one without my permission, you can however modify the product to fit your needs and give it away for free as long as you provide the same right to the receiving entity.
+
+
 # DON'T BE A DICK PUBLIC LICENSE
 
 > Version 1, December 2009
