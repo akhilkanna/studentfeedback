@@ -4,7 +4,7 @@ This product can only be used for commercial purposes only with my permission an
 
 You can't sell this product to any one without my permission, you can however modify the product to fit your needs and give it away for free as long as you provide the same right to the receiving entity.
 
-You can't in any condition, run this product in any Microsoft's operating system or any other Microsoft's product. If you're a Microsoft employee or CEO or Bill Gates, ```Yes offence!``` You can only use this if you run a linux based operating system not developed by you or Microsoft, so use Linux based Distro inside your office! And a Tweet me @nishchalCoder would be great :D
+You can't in any condition, run this product in any Microsoft's operating system or any other Microsoft's product. If you're a Microsoft employee or CEO or Bill Gates, ```Yes offence!``` You can only use this if you run a linux based operating system not developed by you or Microsoft, so use Linux based Distro inside your office! And a Tweet me @cyb3rhck would be great :D
 
 This can only be sold with my permission, so if you're looking at this page and you've bought this product and can't find a permission.md file or my signature is not verified, you have to make me aware of it, failing to do so might cause you legal issues.
 
