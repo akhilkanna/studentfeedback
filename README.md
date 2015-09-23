@@ -86,7 +86,7 @@ When you login, you can see a page with the text boxes, you can add faculties fr
 
 ### This is it! Get the feedback from results page.
 
-### This application is made with love by @cyberHck (Github) or @nishchalCoder (Twitter) +NishchalGautam (Google Plus) contributions welcome,
+### This application is made with love by @cyberHck (Github) or @cyb3rhck (Twitter) +NishchalGautam (Google Plus) contributions welcome,
 
 #### Please read the license file before using this product.
 
